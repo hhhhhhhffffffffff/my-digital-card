@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Galal Abdel Fattah | Continental International Hotels & Resorts</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome 6 Pro Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Cormorant Garamond, Cinzel & Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- QRCode JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FFFDF0',
+                            100: '#FDF6CE',
+                            200: '#FCE798',
+                            300: '#F7D25A',
+                            400: '#E6B830',
+                            500: '#D4AF37', // Brand Signature Gold
+                            600: '#B28B1C',
+                            700: '#8A670F',
+                            800: '#64480A',
+                            900: '#3D2A04'
+                        },
+                        brandBlack: '#0a0b0e',
+                        cardDark: '#12141a',
+                        cardBorder: '#262933'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Cinzel', 'serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                        arabic: ['Cairo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'Cormorant Garamond', sans-serif;
+            background-color: #08090c;
+            color: #f3f4f6;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 10% 85%, rgba(178, 139, 28, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 90% 40%, rgba(212, 175, 55, 0.05) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        /* Gold Foil Metallic Gradient Text */
+        .gold-metallic-text {
+            background: linear-gradient(135deg, #FFFDF0 0%, #F7D25A 25%, #D4AF37 55%, #AA771C 80%, #FDF6CE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Golden Border Gradient Wrap */
+        .gold-gradient-border {
+            border: 1px solid transparent;
+            background: linear-gradient(#101218, #101218) padding-box,
+                        linear-gradient(135deg, rgba(212, 175, 55, 0.7) 0%, rgba(253, 246, 206, 0.3) 35%, rgba(138, 103, 15, 0.2) 70%, rgba(212, 175, 55, 0.6) 100%) border-box;
+        }
+
+        .gold-button {
+            background: linear-gradient(135deg, #F7D25A 0%, #D4AF37 50%, #B28B1C 100%);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gold-button:hover {
+            background: linear-gradient(135deg, #FFFDF0 0%, #E6B830 50%, #8A670F 100%);
+            box-shadow: 0 6px 28px rgba(212, 175, 55, 0.45);
+            transform: translateY(-1px);
+        }
+
+        /* Glassmorphism Effect */
+        .glass-panel {
+            background: rgba(16, 18, 24, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Luxury Curved Accent Overlay */
+        .gold-curved-accent {
+            position: absolute;
+            bottom: -2px;
+            left: -2px;
+            width: 130px;
+            height: 130px;
+            background: radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.35), transparent 70%);
+            border-bottom-left-radius: 1.5rem;
+            pointer-events: none;
+        }
+
+        /* Ambient Glow Pulse */
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+        }
+        .animate-subtle-glow {
+            animation: subtlePulse 6s infinite ease-in-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08090c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center p-3 sm:p-6 relative overflow-x-hidden selection:bg-gold-500 selection:text-black">
+
+    <!-- Ambient Golden Orbs Background -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none animate-subtle-glow"></div>
+
+    <!-- Top Navigation Header -->
+    <header class="w-full max-w-md flex justify-between items-center mb-4 z-10">
+        <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+            <span class="text-[11px] text-gold-300/90 font-cinzel tracking-widest uppercase font-semibold">VIP Digital Profile</span>
+        </div>
+        <!-- Language Switcher Button -->
+        <button id="langToggleBtn" onclick="toggleLanguage()" class="glass-panel gold-gradient-border px-3.5 py-1.5 rounded-full text-xs font-semibold text-gold-300 hover:text-white transition flex items-center gap-2 shadow-lg">
+            <i class="fa-solid fa-globe text-gold-400"></i>
+            <span id="langLabel">English</span>
+        </button>
+    </header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-md glass-panel gold-gradient-border rounded-3xl p-5 sm:p-7 shadow-2xl relative z-10 my-auto text-center">
+        
+        <!-- Curved Metallic Decorative Ribbon Accent -->
+        <div class="gold-curved-accent"></div>
+
+        <!-- LOGO HEADER SECTION (Matching Physical Business Card Front) -->
+        <div class="flex flex-col items-center mb-6 pt-2">
+            
+            <!-- Monogram Emblem (CIR Interlocking Gold Crest) -->
+            <div class="w-20 h-20 sm:w-24 sm:h-24 mb-3 relative flex items-center justify-center">
+                <svg class="w-full h-full drop-shadow-[0_4px_12px_rgba(212,175,55,0.4)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFFDF0"/>
+                            <stop offset="30%" stop-color="#F7D25A"/>
+                            <stop offset="65%" stop-color="#D4AF37"/>
+                            <stop offset="100%" stop-color="#8A670F"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Outer Decorative Laurel Ring -->
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGrad)" stroke-width="1.2" stroke-dasharray="4 2" opacity="0.6"/>
+                    <circle cx="50" cy="50" r="42" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.8"/>
+                    
+                    <!-- Monogram Interlocking C & R -->
+                    <!-- Outer 'C' -->
+                    <path d="M58 28 C 36 24, 24 38, 24 50 C 24 62, 36 76, 58 72 C 63 71, 65 67, 60 67 C 45 67, 34 58, 34 50 C 34 42, 45 33, 60 33 C 65 33, 63 29, 58 28 Z" fill="url(#goldGrad)" />
+                    <!-- Inner Stylized 'R' Interlocked -->
+                    <path d="M46 30 H 62 C 72 30, 74 41, 63 46 C 73 50, 75 69, 75 70 C 75 71, 71 71, 67 63 C 63 55, 60 48, 55 48 H 52 V 70 H 46 V 30 Z M 52 36 V 43 H 61 C 66 43, 66 36, 61 36 H 52 Z" fill="url(#goldGrad)" />
+                </svg>
+            </div>
+
+            <!-- Brand Name -->
+            <h2 class="text-base sm:text-lg font-cinzel font-bold tracking-[0.2em] text-gold-300 uppercase leading-tight">
+                CONTINENTAL
+            </h2>
+            <p class="text-[9px] sm:text-[10px] font-cinzel tracking-[0.25em] text-gray-400 uppercase mt-0.5">
+                International Hotels & Resorts
+            </p>
+
+            <!-- Slogan Line -->
+            <div class="mt-2 flex items-center gap-2">
+                <span class="h-[1px] w-6 bg-gradient-to-r from-transparent to-gold-500/50"></span>
+                <span class="text-[9px] font-cinzel tracking-[0.2em] text-gold-400 uppercase font-semibold">
+                    EXCEPTIONAL STAYS <span class="text-gray-500">|</span> LASTING IMPRESSIONS
+                </span>
+                <span class="h-[1px] w-6 bg-gradient-to-l from-transparent to-gold-500/50"></span>
+            </div>
+        </div>
+
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-gold-500/30 to-transparent my-4"></div>
+
+        <!-- EXECUTIVE PROFILE INFO -->
+        <div class="mb-6">
+            <h1 id="userName" class="text-2xl sm:text-3xl font-extrabold gold-metallic-text tracking-wide mb-1 leading-snug">
+                Mohamed Galal Abdel Fattah
+            </h1>
+            <p id="userNameAr" class="text-lg font-bold text-gray-200 mb-2 font-arabic">
+                محمد جلال عبدالفتاح
+            </p>
+            <div class="inline-block px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 mb-2">
+                <p id="userTitleEn" class="text-xs font-cinzel font-semibold text-gold-300">
+                    Executive Director for Operations, Operations & Development
+                </p>
+            </div>
+            <p id="userTitleAr" class="text-xs text-gray-300 font-medium font-arabic">
+                المدير التنفيذي للعمليات والتشغيل والتطوير
+            </p>
+        </div>
+
+        <!-- SAVE CONTACT CTA BUTTON -->
+        <div class="mb-6">
+            <button onclick="downloadVCard()" class="w-full gold-button text-brandBlack font-extrabold py-3.5 px-4 rounded-xl flex items-center justify-center gap-3 shadow-xl active:scale-[0.98]">
+                <i class="fa-solid fa-address-book text-lg"></i>
+                <span id="btnSaveContactText" class="text-xs sm:text-sm font-bold">حفظ جهة الاتصال (Save Contact .vcf)</span>
+            </button>
+        </div>
+
+        <!-- PHONE NUMBERS & WHATSAPP ACTION GRID -->
+        <div class="space-y-3 mb-6">
+            
+            <!-- Primary Number (+966 504 665 344) -->
+            <div class="p-3.5 rounded-2xl glass-panel border border-gold-500/20 hover:border-gold-500/40 transition">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-mobile-screen-button text-gold-400 text-xs"></i>
+                        <span id="lblPhone1" class="text-xs font-bold text-gold-300">الرقم الرئيسي / Main Phone</span>
+                    </div>
+                    <span class="text-xs font-mono font-bold text-white tracking-wider dir-ltr">+966 504 665 344</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="tel:+966504665344" class="py-2 px-3 rounded-xl bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 text-xs font-semibold flex items-center justify-center gap-2 border border-gold-500/30 transition">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                        <span id="btnCall1">اتصال / Call</span>
+                    </a>
+                    <a href="https://wa.me/966504665344" target="_blank" class="py-2 px-3 rounded-xl bg-emerald-950/40 hover:bg-emerald-900/60 text-emerald-400 text-xs font-semibold flex items-center justify-center gap-2 border border-emerald-500/40 transition">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>WhatsApp 1</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Secondary Number (+966 505 743 880) -->
+            <div class="p-3.5 rounded-2xl glass-panel border border-gold-500/20 hover:border-gold-500/40 transition">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-phone-volume text-gold-400 text-xs"></i>
+                        <span id="lblPhone2" class="text-xs font-bold text-gold-300">الرقم الثاني / Direct Line</span>
+                    </div>
+                    <span class="text-xs font-mono font-bold text-white tracking-wider dir-ltr">+966 505 743 880</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="tel:+966505743880" class="py-2 px-3 rounded-xl bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 text-xs font-semibold flex items-center justify-center gap-2 border border-gold-500/30 transition">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                        <span id="btnCall2">اتصال / Call</span>
+                    </a>
+                    <a href="https://wa.me/966505743880" target="_blank" class="py-2 px-3 rounded-xl bg-emerald-950/40 hover:bg-emerald-900/60 text-emerald-400 text-xs font-semibold flex items-center justify-center gap-2 border border-emerald-500/40 transition">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>WhatsApp 2</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- EMAIL & LINKEDIN & WEBSITE LIST -->
+        <div class="space-y-2.5 text-right dir-rtl mb-6">
+            
+            <!-- Email -->
+            <a href="mailto:Mohamed_GalalEL@hotmail.com" class="p-3 rounded-xl glass-panel border border-gold-500/15 hover:border-gold-500/40 flex items-center justify-between group transition">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition">
+                        <i class="fa-solid fa-envelope text-sm"></i>
+                    </div>
+                    <div class="text-right">
+                        <div id="lblEmail" class="text-[10px] text-gray-400">البريد الإلكتروني المباشر / Direct Email</div>
+                        <div class="text-xs font-mono text-gray-200 truncate max-w-[190px] sm:max-w-[220px]">Mohamed_GalalEL@hotmail.com</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-left text-xs text-gray-500 group-hover:text-gold-400 transition"></i>
+            </a>
+
+            <!-- LinkedIn Profile -->
+            <a href="https://www.linkedin.com/in/mohamed-galal-a27a65229?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="p-3 rounded-xl glass-panel border border-gold-500/15 hover:border-gold-500/40 flex items-center justify-between group transition">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition">
+                        <i class="fa-brands fa-linkedin-in text-sm"></i>
+                    </div>
+                    <div class="text-right">
+                        <div id="lblLinkedin" class="text-[10px] text-gray-400">الملف المهني / LinkedIn Profile</div>
+                        <div class="text-xs text-gray-200 font-medium font-cinzel">mohamed-galal-a27a65229</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-gold-400 transition"></i>
+            </a>
+
+            <!-- Official Website -->
+            <a href="http://www.continentalhotels.com" target="_blank" class="p-3 rounded-xl glass-panel border border-gold-500/15 hover:border-gold-500/40 flex items-center justify-between group transition">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition">
+                        <i class="fa-solid fa-globe text-sm"></i>
+                    </div>
+                    <div class="text-right">
+                        <div id="lblWebsite" class="text-[10px] text-gray-400">الموقع الرسمي / Official Website</div>
+                        <div class="text-xs text-gold-300 font-bold font-cinzel tracking-wider">WWW.CONTINENTALHOTELS.COM</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-gold-400 transition"></i>
+            </a>
+
+        </div>
+
+        <!-- BRAND IDENTITY CARD SECTION (Matching Back of Physical Card) -->
+        <div class="rounded-2xl p-4 bg-gradient-to-b from-gold-500/10 via-brandBlack to-brandBlack border border-gold-500/25 text-center mb-6 relative overflow-hidden">
+            
+            <!-- Brand Motto Quote -->
+            <div class="mb-4">
+                <p id="mottoEn" class="font-cinzel text-xs font-bold tracking-widest text-gold-300 uppercase mb-1">
+                    Better People | Better Hospitality | A Brighter Future
+                </p>
+                <p id="mottoAr" class="font-arabic text-xs font-semibold text-gray-300">
+                    أشخاص أفضل <span class="text-gold-400">|</span> ضيافة أفضل <span class="text-gold-400">|</span> مستقبل أكثر إشراقاً
+                </p>
+            </div>
+
+            <div class="w-3/4 h-[1px] bg-gradient-to-r from-transparent via-gold-500/30 to-transparent mx-auto mb-4"></div>
+
+            <!-- 3 Brand Pillars (HOTELS / RESORTS / HOSPITALITY) -->
+            <div class="grid grid-cols-3 gap-2">
+                <!-- Hotels -->
+                <div class="flex flex-col items-center p-2 rounded-xl bg-gold-500/5 border border-gold-500/15">
+                    <i class="fa-solid fa-hotel text-gold-400 text-base mb-1"></i>
+                    <span class="text-[10px] font-cinzel font-bold text-gray-200">HOTELS</span>
+                    <span id="pillarHotels" class="text-[9px] text-gold-300/80 font-arabic">الفنادق</span>
+                </div>
+
+                <!-- Resorts -->
+                <div class="flex flex-col items-center p-2 rounded-xl bg-gold-500/5 border border-gold-500/15">
+                    <i class="fa-solid fa-umbrella-beach text-gold-400 text-base mb-1"></i>
+                    <span class="text-[10px] font-cinzel font-bold text-gray-200">RESORTS</span>
+                    <span id="pillarResorts" class="text-[9px] text-gold-300/80 font-arabic">المنتجعات</span>
+                </div>
+
+                <!-- Hospitality -->
+                <div class="flex flex-col items-center p-2 rounded-xl bg-gold-500/5 border border-gold-500/15">
+                    <i class="fa-solid fa-concierge-bell text-gold-400 text-base mb-1"></i>
+                    <span class="text-[10px] font-cinzel font-bold text-gray-200">HOSPITALITY</span>
+                    <span id="pillarHospitality" class="text-[9px] text-gold-300/80 font-arabic">الضيافة</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR CODE MODAL TOGGLE -->
+        <button onclick="toggleQRModal()" class="w-full py-2.5 px-4 rounded-xl text-xs text-gold-300/90 hover:text-white border border-gold-500/20 hover:border-gold-500/50 flex items-center justify-center gap-2 transition bg-gold-500/5">
+            <i class="fa-solid fa-qrcode text-gold-400"></i>
+            <span id="btnShowQR">عرض رمز الباركود للمشاركة (Display QR Code)</span>
+        </button>
+
+        <!-- QR Code Container -->
+        <div id="qrContainer" class="hidden mt-4 pt-4 border-t border-gold-500/20 flex flex-col items-center">
+            <div class="p-3 bg-white rounded-2xl shadow-2xl mb-2 inline-block">
+                <div id="qrcode"></div>
+            </div>
+            <p id="qrHelpText" class="text-[11px] text-gray-400">امسح الكود بواسطة كاميرا الجوال لمشاركة هذه الصفحة</p>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full max-w-md text-center mt-6 text-[11px] text-gray-500 z-10 font-light">
+        <p>© <span id="year"></span> Continental International Hotels & Resorts.</p>
+        <p class="text-[10px] text-gold-500/60 mt-0.5 tracking-wider font-cinzel">EXCEPTIONAL STAYS • LASTING IMPRESSIONS</p>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT LOGIC -->
+    <script>
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        // Dual Language Dictionary
+        const i18n = {
+            ar: {
+                langName: 'English',
+                dir: 'rtl',
+                btnSaveContact: 'حفظ جهة الاتصال (Save Contact .vcf)',
+                lblPhone1: 'الرقم الرئيسي / Main Phone',
+                lblPhone2: 'الرقم الثاني / Direct Line',
+                btnCall1: 'اتصال / Call',
+                btnCall2: 'اتصال / Call',
+                lblEmail: 'البريد الإلكتروني المباشر',
+                lblLinkedin: 'الملف المهني (LinkedIn)',
+                lblWebsite: 'الموقع الرسمي',
+                btnShowQR: 'عرض رمز الباركود للمشاركة (Display QR Code)',
+                qrHelpText: 'امسح الكود بواسطة كاميرا الجوال لمشاركة هذه الصفحة',
+                pillarHotels: 'الفنادق',
+                pillarResorts: 'المنتجعات',
+                pillarHospitality: 'الضيافة'
+            },
+            en: {
+                langName: 'العربية',
+                dir: 'ltr',
+                btnSaveContact: 'Save Contact to Phone (.vcf)',
+                lblPhone1: 'Primary Phone & WhatsApp',
+                lblPhone2: 'Secondary Direct Line',
+                btnCall1: 'Call Now',
+                btnCall2: 'Call Now',
+                lblEmail: 'Direct Email',
+                lblLinkedin: 'LinkedIn Profile',
+                lblWebsite: 'Official Website',
+                btnShowQR: 'Display QR Code for Sharing',
+                qrHelpText: 'Scan code with camera to share profile',
+                pillarHotels: 'Hotels',
+                pillarResorts: 'Resorts',
+                pillarHospitality: 'Hospitality'
+            }
+        };
+
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const data = i18n[currentLang];
+
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = data.dir;
+
+            document.getElementById('langLabel').innerText = data.langName;
+            document.getElementById('btnSaveContactText').innerText = data.btnSaveContact;
+            document.getElementById('lblPhone1').innerText = data.lblPhone1;
+            document.getElementById('lblPhone2').innerText = data.lblPhone2;
+            document.getElementById('btnCall1').innerText = data.btnCall1;
+            document.getElementById('btnCall2').innerText = data.btnCall2;
+            document.getElementById('lblEmail').innerText = data.lblEmail;
+            document.getElementById('lblLinkedin').innerText = data.lblLinkedin;
+            document.getElementById('lblWebsite').innerText = data.lblWebsite;
+            document.getElementById('btnShowQR').innerText = data.btnShowQR;
+            document.getElementById('qrHelpText').innerText = data.qrHelpText;
+            document.getElementById('pillarHotels').innerText = data.pillarHotels;
+            document.getElementById('pillarResorts').innerText = data.pillarResorts;
+            document.getElementById('pillarHospitality').innerText = data.pillarHospitality;
+        }
+
+        // Generate vCard 3.0 File containing both phone numbers
+        function downloadVCard() {
+            const vCardContent = `BEGIN:VCARD
+VERSION:3.0
+N:Abdel Fattah;Mohamed;Galal;;
+FN:Mohamed Galal Abdel Fattah
+ORG:Continental International Hotels & Resorts
+TITLE:Executive Director for Operations, Operations & Development | المدير التنفيذي للعمليات والتشغيل والتطوير
+TEL;TYPE=CELL,PREF,VOICE:+966504665344
+TEL;TYPE=CELL,VOICE:+966505743880
+EMAIL;TYPE=INTERNET,PREF:Mohamed_GalalEL@hotmail.com
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/mohamed-galal-a27a65229
+URL;TYPE=Website:http://www.continentalhotels.com
+NOTE:Better People | Better Hospitality | A Brighter Future
+END:VCARD`;
+
+            const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const downloadLink = document.createElement('a');
+            downloadLink.style.display = 'none';
+            downloadLink.href = url;
+            downloadLink.download = 'Mohamed_Galal_Continental.vcf';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(downloadLink);
+        }
+
+        // Dynamically Generate QR Code
+        let isQrGenerated = false;
+        function toggleQRModal() {
+            const container = document.getElementById('qrContainer');
+            container.classList.toggle('hidden');
+
+            if (!isQrGenerated) {
+                new QRCode(document.getElementById("qrcode"), {
+                    text: window.location.href,
+                    width: 160,
+                    height: 160,
+                    colorDark: "#0a0b0e",
+                    colorLight: "#FFFFFF",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+                isQrGenerated = true;
+            }
+        }
+    </script>
+</body>
+</html>
